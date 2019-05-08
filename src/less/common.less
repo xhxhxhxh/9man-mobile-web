@@ -1,0 +1,46 @@
+//公共样式
+
+//右箭头
+.arrow-right::after {
+  width: 12rem/@baseFontSize;
+  height: 12rem/@baseFontSize;
+  border: 3rem/@baseFontSize solid #C1C1C1;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  content: " ";
+  top: 50%;
+  right: 26rem/@baseFontSize;
+  position: absolute;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+//右箭头小
+.arrow-right-small::after {
+  width: 9rem/@baseFontSize;
+  height: 9rem/@baseFontSize;
+  border: 1rem/@baseFontSize solid #999;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  content: " ";
+  top: 50%;
+  right: 25rem/@baseFontSize;
+  position: absolute;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+//左箭头
+.arrow-left::after {
+  width: 12rem/@baseFontSize;
+  height: 12rem/@baseFontSize;
+  border: 2rem/@baseFontSize solid #333;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  content: " ";
+  top: 50%;
+  left: 25rem/@baseFontSize;
+  position: absolute;
+  -webkit-transform: translateY(-50%) rotate(225deg);
+  transform: translateY(-50%) rotate(225deg);
+}

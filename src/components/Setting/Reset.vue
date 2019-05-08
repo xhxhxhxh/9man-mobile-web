@@ -8,7 +8,7 @@
         <div class="list">
             <div class="telephone">
                 <label for="telephone">手机号</label>
-                <input type="text" name="telephone" id="telephone" value="13587445654" disabled>
+                <input type="text" name="telephone" id="telephone" value="13587445654" readonly="readonly">
             </div>
             <div class="VerificationCode">
                 <label for="VerificationCode">验证码</label>
@@ -39,6 +39,7 @@
     @import "../../less/var.less";
     .reset-container {
         height: 100%;
+        width: 100%;
         background-color: #F5F5F5;
         position: relative;
         header {

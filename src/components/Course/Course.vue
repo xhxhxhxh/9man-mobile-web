@@ -1,8 +1,8 @@
 <template>
     <div class="course-container">
         <h1>我的课程
-            <img src="./images/补课-可点击@2x.png" alt="" v-if="'true'">
-            <img src="./images/补课-不可点击@2x.png" alt="" v-else>
+            <img src="./images/补课-可点击@2x.png" alt="" v-if="'true'" @click="$router.push('/console/course/MakeUpCourse')">
+            <img src="./images/补课-不可点击@2x.png" alt="" v-else @click="$router.push('/console/course/MakeUpCourse')">
         </h1>
         <div class="myCourses">
             <img src="./images/course.png" alt="">

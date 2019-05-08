@@ -19,6 +19,7 @@
 <style lang="less" scoped>
     .console-container {
         height: 100%;
+        width: 100%;
     }
 
 </style>

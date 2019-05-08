@@ -6,7 +6,7 @@
             <span class="title">设置</span>
         </div>
         <div class="list">
-            <div @click="$router.push('/reset')">
+            <div @click="$router.push('/console/user/setting/reset')">
                 <mt-cell title="修改密码" >
                     <span class="arrow-right-small"></span>
                 </mt-cell>
@@ -28,7 +28,10 @@
 
 <script>
     export default {
-        name: "Setting"
+        name: "Setting",
+        methods: {
+
+        }
     }
 </script>
 
@@ -36,6 +39,7 @@
     @import "../../less/var.less";
     .setting-container {
         height: 100%;
+        width: 100%;
         background-color: #F5F5F5;
         position: relative;
         header {

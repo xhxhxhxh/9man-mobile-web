@@ -25,15 +25,9 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         rootUrl: '',
-        sessionId: '',
-        userInfo: ''
     },
     mutations: {
-        //设置id 和 userInfo
-        setIdAndUserInfo (state, userInfo) {
-            state.sessionId = userInfo.id;
-            state.userInfo = userInfo;
-        }
+
     }
 });
 

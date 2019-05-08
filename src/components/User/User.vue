@@ -1,9 +1,10 @@
 <template>
     <div class="user-container">
-        <img src="./images/设置@2x.png" alt="" class="setting" @click="$router.push('/setting')">
+        <img src="./images/设置@2x.png" alt="" class="setting" @click="$router.push('/console/user/setting')">
         <div class="avatar">
             <img src="./images/avatar.png" alt="">
             <span class="username">小魔仙</span>
+<!--            <router-link>登录/注册</router-link>-->
         </div>
         <div class="starAndMedal">
             <div class="star">
@@ -33,7 +34,12 @@
 
 <script>
     export default {
-        name: "User"
+        name: "User",
+        data () {
+            return {
+                isLogin: false
+            }
+        }
     }
 </script>
 

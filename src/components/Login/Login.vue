@@ -17,7 +17,7 @@
                            oninput="if (value.length > 6){value = value.slice(0,6)}" v-model="VerificationCode">
                     <div :class="{getVerificationCode: true, alreadyGetCode}" @click="sendVerificationCode" :disabled="alreadyGetCode">{{verificationCodeText}}</div>
                 </div>
-                <input type="text" placeholder="请输入您的密码" name="password" class="password" id="password" v-model="password" v-else>
+                <input type="password" placeholder="请输入您的密码" name="password" class="password" id="password" v-model="password" v-else>
                 <p class="privacy">
                     <span class="isChosen">
                         <input type="checkbox" v-model="isChosen">
@@ -27,7 +27,7 @@
                     我已经阅读并同意 <a href="#">使用条款和隐私政策</a>
                 </p>
                 <mt-button type="primary" size="large" :disabled="!isAllowedLogin" :class="{isAllowedLogin: !isAllowedLogin}"
-                           @click.prevent="() => {usePassword? loginByPassword(): loginByVerificationCode()}">登录</mt-button>
+                           @click.prevent="() => {usePassword? loginByPassword(): loginByVerificationCode()}">登&nbsp;录</mt-button>
                 <p class="usePassword"><span @click="usePassword = !usePassword">{{ usePassword? '手机验证登录': '账号密码登录'}}</span></p>
             </form>
         </main>
@@ -37,6 +37,7 @@
 <script>
     import { Toast } from 'mint-ui';
     import md5 from 'blueimp-md5';
+    import Common from '../../js/common';
 
     export default {
         name: "Login",
@@ -176,7 +177,9 @@
                         let data = res.data;
                         console.log(data);
                         if (data.code == 200) {
-                            this.$store.commit('setIdAndUserInfo', data);
+                            Common.setLocalStorage('id', data.id);
+                            Common.setLocalStorage('userInfo', data);
+                            this.$router.go(-1);
                         } else {
                             Toast({
                                 message: data.msg,
@@ -230,7 +233,9 @@
                         let data = res.data;
                         console.log(data);
                         if (data.code == 200) {
-                            this.$store.commit('setIdAndUserInfo', data);
+                            Common.setLocalStorage('id', data.id);
+                            Common.setLocalStorage('userInfo', data);
+                            this.$router.go(-1);
                         } else {
                             Toast({
                                 message: data.msg,
@@ -253,6 +258,22 @@
     .login-container {
         height: 100%;
         position: relative;
+        input::-webkit-input-placeholder{
+            font-size: 16rem/@baseFontSize;
+            color: #848069;
+        }
+        input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+            font-size: 16rem/@baseFontSize;
+            color: #848069;
+        }
+        input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+            font-size: 16rem/@baseFontSize;
+            color: #848069;
+        }
+        input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+            font-size: 16rem/@baseFontSize;
+            color: #848069;
+        }
         header {
             width: 100%;
             height: 210rem/@baseFontSize;
@@ -292,7 +313,7 @@
                     margin-bottom: 15rem/@baseFontSize;
                     padding: 17rem/@baseFontSize;
                     font-size: 16rem/@baseFontSize;
-                    color: #848069;
+                    color: #333;
                 }
                 .password {
                     margin: 0;

@@ -4,7 +4,7 @@
             <img src="./images/补课-可点击@2x.png" alt="" v-if="'true'" @click="$router.push('/console/course/MakeUpCourse')">
             <img src="./images/补课-不可点击@2x.png" alt="" v-else @click="$router.push('/console/course/MakeUpCourse')">
         </h1>
-        <div class="myCourses">
+        <div class="myCourses" v-if="isLogin">
             <img src="./images/course.png" alt="">
             <h3 class="title">
                 <div>
@@ -23,12 +23,27 @@
                 <button class="enter">点击进入</button>
             </div>
         </div>
+        <NotFound :text="'还没有课程？'" class="notFound" v-else>
+            <template v-slot:button>
+                <button>购买课程</button>
+            </template>
+        </NotFound>
     </div>
 </template>
 
 <script>
+    import NotFound from '../common/NotFound.vue';
+
     export default {
-        name: "Course"
+        name: "Course",
+        data () {
+          return {
+              isLogin: true
+          }
+        },
+        components: {
+            NotFound
+        }
     }
 </script>
 
@@ -136,6 +151,19 @@
                     line-height: 28rem/@baseFontSize;
                     color: #fff;
                 }
+            }
+        }
+        .notFound {
+            height: 230rem/@baseFontSize;
+            button {
+                height: 34rem/@baseFontSize;
+                width: 120rem/@baseFontSize;
+                line-height: 34rem/@baseFontSize;
+                border-radius: 5rem/@baseFontSize;
+                font-size: 12rem/@baseFontSize;
+                color: #fff;
+                background-color: #FCC93A;
+                border: 0;
             }
         }
     }

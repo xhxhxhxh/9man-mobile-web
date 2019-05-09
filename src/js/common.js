@@ -14,4 +14,6 @@ Common.setLocalStorage = (key, value) =>{
 Common.getLocalStorage = (key) =>{
     return JSON.parse(localStorage.getItem(key) || '[]');
 };
+
+
  export default Common

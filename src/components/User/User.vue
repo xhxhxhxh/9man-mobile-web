@@ -2,7 +2,7 @@
     <div class="user-container">
         <img src="./images/设置@2x.png" alt="" class="setting" @click="$router.push('/console/user/setting')">
         <div class="avatar">
-            <img src="./images/avatar.png" alt="">
+            <img src="./images/avatar.png" alt="" @click="$router.push('/console/user/personalInfo')">
             <span class="username">小魔仙</span>
 <!--            <router-link>登录/注册</router-link>-->
         </div>

@@ -12,11 +12,11 @@
                 </div>
                 <div class="passwordInput">
                     <label for="password">密码：</label>
-                    <input type="text" id="password">
+                    <input type="password" id="password">
                 </div>
                 <div class="confirmInput">
                     <label for="confirm">确认密码：</label>
-                    <input type="text" id="confirm">
+                    <input type="password" id="confirm">
                 </div>
                 <div class="gender">
                     <div class="male">

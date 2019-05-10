@@ -175,7 +175,7 @@
                 this.$axios.get(this.rootUrl + '/indexapp.php', {params})
                     .then(res => {
                         let data = res.data;
-                        console.log(data);
+                        // console.log(data);
                         if (data.code == 200) {
                             Common.setLocalStorage('id', data.id);
                             Common.setLocalStorage('userInfo', data);
@@ -231,7 +231,7 @@
                 this.$axios.get(this.rootUrl + '/indexapp.php', {params})
                     .then(res => {
                         let data = res.data;
-                        console.log(data);
+                        // console.log(data);
                         if (data.code == 200) {
                             Common.setLocalStorage('id', data.id);
                             Common.setLocalStorage('userInfo', data);

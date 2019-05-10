@@ -29,6 +29,12 @@
                 if (fromArr[1] == 'login' || toArr[1] == 'login') {
                     this.transitionName = 'slide-none'
                 }
+                if (fromArr[fromArr.length - 2] == 'personalInfo' || toArr[toArr.length - 2] == 'personalInfo') {
+                    if (fromArr[fromArr.length - 1] != 'avatar' && toArr[toArr.length - 1] != 'avatar') {
+                        this.transitionName = toDepth < fromDepth ? 'slide-down' : 'slide-up';
+                    }
+
+                }
             }
         },
         methods: {
@@ -87,6 +93,28 @@
         }
         .slide-right-enter-active,.slide-right-leave-active {
             transition: all .5s ease;
+        }
+        .slide-up-enter {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        .slide-up-leave-to {
+            opacity: 0;
+            position: absolute!important;
+        }
+        .slide-up-enter-active,.slide-up-leave-active {
+            transition: all .4s ease;
+        }
+        .slide-down-enter {
+            opacity: 0;
+        }
+        .slide-down-leave-to {
+            opacity: 0;
+            transform: translateY(100%);
+            position: absolute!important;
+        }
+        .slide-down-enter-active,.slide-down-leave-active {
+            transition: all .4s ease;
         }
     }
 

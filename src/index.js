@@ -1,6 +1,7 @@
+import './less/index.less';
+import './css/font-awesome.min.css';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import './less/index.less';
 import router from './router';
 import app from './app.vue';
 import axios from 'axios'
@@ -22,21 +23,9 @@ Vue.component(Actionsheet.name, Actionsheet);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-//聚焦效果
-Vue.directive('focus',{
-    inserted: function (el) {
-        el.focus();
-    }
-});
-Vue.directive('blur',{
-    inserted: function (el) {
-        el.blur();
-    }
-});
-
 const store = new Vuex.Store({
     state: {
-        rootUrl: '',
+        rootUrl: 'https://edu.9man.com',
     },
     mutations: {
 

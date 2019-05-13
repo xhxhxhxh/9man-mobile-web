@@ -10,12 +10,12 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin');//spa工具
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: path.join(__dirname,'./src/index.js'),
     output: {
         path: path.join(__dirname,'./dist'),
         filename: 'js/bundle.js',
-        publicPath: "./"
+        publicPath: '/'
     },
     devServer: {
         open: true,
@@ -53,7 +53,7 @@ module.exports = {
             // Required - The path to the webpack-outputted app to prerender.
             staticDir: path.join(__dirname, 'dist'),
             // Required - Routes to render.
-            routes: [ '/'],
+            routes: [ '/','/login','/console/user/setting','/console/user','/console/user/setting/reset','/console/course/MakeUpCourse','/console/course'],
             renderer: new Renderer({
                 // renderAfterDocumentEvent: 'render-event',
                 // renderAfterTime: 5000
@@ -70,7 +70,7 @@ module.exports = {
                     use: "css-loader"
                 })
             },
-            // {test: /\.less$/, use: ['style-loader','css-loader','less-loader']},
+            //  {test: /\.less$/, use: ['style-loader','css-loader','less-loader']},
             {
                 test: /\.less$/,
                 use: extractLESS.extract({ // 2、使用ExtractTextWebpackPlugin
@@ -83,7 +83,18 @@ module.exports = {
                     use: ['css-loader', 'less-loader']
                 })
             },
-            {test: /\.(jpg|png|gif|bmp|jpeg)$/, use: ['url-loader?limit=102400&name=[hash:8]-[name].[ext]&outputPath=images']},
+            // {test: /\.(jpg|png|gif|bmp|jpeg)$/, use: ['url-loader?limit=102400&name=[hash:8]-[name].[ext]&outputPath=images']},
+            {test: /\.(jpg|png|gif|bmp|jpeg)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 102400,
+                        name: '[hash:8]-[name].[ext]',
+                        outputPath: 'images',
+                        publicPath: '/images/'
+
+                    }
+                }]},
             {test: /\.(ttf|eot|svg|woff|woff2)$/, use: ['url-loader']},
             {test: /\.js$/, use: 'babel-loader', exclude: /node_modules/},
             // {test: /\.vue$/, use: 'vue-loader'}

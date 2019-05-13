@@ -35,7 +35,7 @@
         watch:{
             $route(to,from){
                 this.hashAddress = to.path.substr(9)
-                console.log(to);
+                // console.log(to);
             }
         },
     }

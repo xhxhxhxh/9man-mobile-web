@@ -43,7 +43,7 @@
             //获取照片
             getPhoto (e) {
                 const files = e.target.files;
-                console.log(files);
+                // console.log(files);
                 const reader = new FileReader();
                 const file = files[0];
                 // console.dir(this.files[0]);

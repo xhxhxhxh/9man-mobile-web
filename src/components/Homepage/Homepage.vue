@@ -13,7 +13,7 @@
                 <span>少儿思维</span>
                 <span>在线报名</span>
             </div>
-            <button>点击报名</button>
+            <button @click="$router.push('/login')">点击报名</button>
         </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="app-container">
+    <div class="app-container" id="app">
         <transition :name="transitionName">
             <router-view></router-view>
         </transition>

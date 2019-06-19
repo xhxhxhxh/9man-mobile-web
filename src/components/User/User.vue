@@ -46,13 +46,13 @@
 <style lang="less">
     @import "../../less/var.less";
     .user-container {
-        padding: 25rem/@baseFontSize 0;
+        overflow: hidden;
         position: relative;
         .setting {
             height: 20rem/@baseFontSize;
             position: absolute;
             right: 20rem/@baseFontSize;
-            top: 45rem/@baseFontSize;
+            top: 20rem/@baseFontSize;
         }
         .avatar {
             height: 63rem/@baseFontSize;

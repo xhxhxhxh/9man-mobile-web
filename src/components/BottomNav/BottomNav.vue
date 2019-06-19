@@ -29,12 +29,12 @@
         name: "BottomBar",
         data () {
             return {
-                hashAddress: this.$route.path.substr(9),
+                hashAddress: this.$route.path.split('/')[2],
             }
         },
         watch:{
             $route(to,from){
-                this.hashAddress = to.path.substr(9)
+                this.hashAddress = to.path.split('/')[2]
                 // console.log(to);
             }
         },

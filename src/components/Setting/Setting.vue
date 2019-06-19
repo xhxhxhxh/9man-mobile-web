@@ -1,6 +1,5 @@
 <template>
     <div class="setting-container">
-        <header></header>
         <div class="goBack">
             <span class="arrow-left" @click="$router.go(-1)"></span>
             <span class="title">设置</span>
@@ -22,7 +21,7 @@
                 </mt-cell>
             </div>
         </div>
-        <button class="logout">退出登录</button>
+        <button class="logout" @click="logout">退出登录</button>
     </div>
 </template>
 
@@ -30,7 +29,12 @@
     export default {
         name: "Setting",
         methods: {
-
+            // 退出登录
+            logout () {
+                localStorage.removeItem('id');
+                this.$store.commit('setIdentity', '');
+                this.$router.push('/console/notLogin');
+            }
         }
     }
 </script>
@@ -42,10 +46,6 @@
         width: 100%;
         background-color: #F5F5F5;
         position: relative;
-        header {
-            height: 25rem/@baseFontSize;
-            background-color: #fff;
-        }
         .goBack {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;

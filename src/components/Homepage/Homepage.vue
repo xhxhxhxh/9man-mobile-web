@@ -2,19 +2,14 @@
     <div class="homepage-container">
         <h1>欢迎来到少儿思维</h1>
         <h3><img src="./images/矩形4@2x.png" alt=""><span>少儿思维课程体系</span></h3>
-        <div class="banner"></div>
+        <div class="banner" @click="$router.push('/console/homepage/propaganda')"></div>
+        <div class="signUp"></div>
         <h3><img src="./images/矩形4@2x.png" alt=""><span>特色课程</span></h3>
         <div class="specialCourses">
-            <img src="./images/course.png" alt="">
-            <img src="./images/course.png" alt="">
+            <img src="./images/course1.png" alt="">
+            <img src="./images/course2.png" alt="">
         </div>
-        <div class="signUp">
-            <div>
-                <span>少儿思维</span>
-                <span>在线报名</span>
-            </div>
-            <button @click="$router.push('/login')">点击报名</button>
-        </div>
+
     </div>
 </template>
 
@@ -27,7 +22,7 @@
 <style lang="less" scoped>
     @import "../../less/var.less";
     .homepage-container {
-        padding: 25rem/@baseFontSize 21rem/@baseFontSize 80rem/@baseFontSize;
+        padding: 0 21rem/@baseFontSize 80rem/@baseFontSize;
 
         h1 {
             height: 60rem/@baseFontSize;
@@ -54,10 +49,11 @@
         .banner {
             height: 154rem/@baseFontSize;
             border-radius: 10rem/@baseFontSize;
-            background-color: #BBF1FE;
+            background: url("./images/banner.png") no-repeat center;
+            background-size: cover;
             margin-top: 19rem/@baseFontSize;
-            margin-bottom: 24rem/@baseFontSize;
-            box-shadow: 0 50rem/@baseFontSize 26rem/@baseFontSize -33rem/@baseFontSize rgba(31, 188, 227, 0.6);
+            margin-bottom: 23rem/@baseFontSize;
+            box-shadow:0 26px 50px -26px rgba(252,201,58,0.5);
         }
         .specialCourses {
             height: 154rem/@baseFontSize;
@@ -71,36 +67,11 @@
             }
         }
         .signUp {
-            height: 78rem/@baseFontSize;
-            border-radius: 10rem/@baseFontSize;
+            height: 100rem/@baseFontSize;
+            background: url("./images/signUp.png") no-repeat center;
+            background-size: contain;
             margin-top: 22rem/@baseFontSize;
-            background: linear-gradient(to right, #FCC61E, #FCA53A);
-            > div {
-                height: 100%;
-                width: 80rem/@baseFontSize;
-                font-size: 18rem/@baseFontSize;
-                color: #fff;
-                float: left;
-                margin-left: 44rem/@baseFontSize;
-                span:first-of-type {
-                    display: inline-block;
-                    margin-top: 14rem/@baseFontSize;
-                    margin-bottom: 0rem/@baseFontSize;
-                }
-            }
-            button {
-                float: right;
-                width: 101rem/@baseFontSize;
-                height: 32rem/@baseFontSize;
-                line-height: 32rem/@baseFontSize;
-                border-radius: 16rem/@baseFontSize;
-                margin-top: 23rem/@baseFontSize;
-                margin-right: 20rem/@baseFontSize;
-                border: 0;
-                background-color: rgba(255,255,255,.2);
-                color: #fff;
-                font-size: 16rem/@baseFontSize;
-            }
+
         }
     }
 </style>

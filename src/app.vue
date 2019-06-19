@@ -23,10 +23,19 @@
             $route(to,from){
                 const toArr = to.path.split('/');
                 const fromArr = from.path.split('/');
+                if (toArr[toArr.length - 1] === '') { //修复history模式下刷新页面的组件切换动画问题
+                    toArr.pop()
+                }
+                if (fromArr[fromArr.length - 1] === '') {
+                    fromArr.pop()
+                }
                 const toDepth = toArr.length;
                 const fromDepth = fromArr.length;
                 this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left';
                 if (fromArr[1] == 'login' || toArr[1] == 'login') {
+                    this.transitionName = 'slide-none'
+                }
+                if (fromArr[1] == '404' || toArr[1] == '404') {
                     this.transitionName = 'slide-none'
                 }
                 if (fromArr[fromArr.length - 2] == 'personalInfo' || toArr[toArr.length - 2] == 'personalInfo') {
@@ -66,6 +75,12 @@
     body {
         height: 100%;
         background-color: #fff;
+    }
+    #nprogress .bar {
+        background: #FCC93A !important; //自定义颜色
+    }
+    #nprogress .peg {
+        box-shadow: 0 0 10px #FCC93A, 0 0 5px #FCC93A;
     }
     .app-container {
         height: 100%;

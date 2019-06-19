@@ -4,6 +4,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import router from './router';
 import app from './app.vue';
+import store from './store';
+import './permission'
 import axios from 'axios'
 import Vuex from 'vuex';
 import { Button, Radio, Badge, Cell, Actionsheet } from 'mint-ui'
@@ -23,14 +25,6 @@ Vue.component(Actionsheet.name, Actionsheet);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
-    state: {
-        rootUrl: 'https://edu.9man.com',
-    },
-    mutations: {
-
-    }
-});
 
 new Vue({
     el: '#app',

@@ -4,7 +4,7 @@
             <img src="./images/补课-可点击@2x.png" alt="" v-if="'true'" @click="$router.push('/console/course/MakeUpCourse')">
             <img src="./images/补课-不可点击@2x.png" alt="" v-else @click="$router.push('/console/course/MakeUpCourse')">
         </h1>
-        <div class="myCourses" v-if="isLogin">
+        <div class="myCourses">
             <img src="./images/course.png" alt="">
             <h3 class="title">
                 <div>
@@ -23,11 +23,6 @@
                 <button class="enter">点击进入</button>
             </div>
         </div>
-        <NotFound :text="'还没有课程？'" class="notFound" v-else>
-            <template v-slot:button>
-                <button>购买课程</button>
-            </template>
-        </NotFound>
     </div>
 </template>
 
@@ -38,7 +33,7 @@
         name: "Course",
         data () {
           return {
-              isLogin: true
+
           }
         },
         components: {
@@ -50,7 +45,7 @@
 <style lang="less" scoped>
     @import "../../less/var.less";
     .course-container {
-        padding: 25rem/@baseFontSize 21rem/@baseFontSize 0;
+        padding: 0 21rem/@baseFontSize 0;
         h1 {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;
@@ -153,18 +148,6 @@
                 }
             }
         }
-        .notFound {
-            height: 230rem/@baseFontSize;
-            button {
-                height: 34rem/@baseFontSize;
-                width: 120rem/@baseFontSize;
-                line-height: 34rem/@baseFontSize;
-                border-radius: 5rem/@baseFontSize;
-                font-size: 12rem/@baseFontSize;
-                color: #fff;
-                background-color: #FCC93A;
-                border: 0;
-            }
-        }
+
     }
 </style>

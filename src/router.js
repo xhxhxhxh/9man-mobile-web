@@ -12,6 +12,9 @@ import PersonalInfo from './components/User/PersonalInfo.vue';
 import Avatar from './components/User/Avatar.vue';
 import ModifyName from './components/User/ModifyName.vue';
 import ModifyGender from './components/User/ModifyGender.vue';
+import Propaganda from './components/Propaganda/Propaganda.vue';
+import NotLogin from './components/NotLogin/NotLogin.vue';
+import page404 from './components/404/404.vue';
 // const Login = () => import( './components/Login/Login.vue');
 // const Console = () => import( './components/Console/Console.vue');
 // const Homepage = () => import( './components/Homepage/Homepage.vue');
@@ -39,6 +42,7 @@ const router = new VueRouter ({
         { path: '/console/user/personalInfo/avatar', component: Avatar, name: 'Avatar' },
         { path: '/console/user/personalInfo/modifyName', component: ModifyName, name: 'ModifyName' },
         { path: '/console/user/personalInfo/modifyGender', component: ModifyGender, name: 'ModifyGender' },
+        { path: '/console/homepage/propaganda', component: Propaganda, name: 'Propaganda' },
         {
             path: '/console',
             component: Console,
@@ -47,9 +51,11 @@ const router = new VueRouter ({
                 { path: 'homepage', component: Homepage, name: 'Homepage' },
                 { path: 'course', component: Course, name: 'Course' },
                 { path: 'user', component: User, name: 'User' },
-
+                { path: 'notLogin', component: NotLogin, name: 'NotLogin' },
             ]
         },
+        { path: '/404', component: page404 },
+        { path: '*', redirect: '/404' }
 
     ],
 });

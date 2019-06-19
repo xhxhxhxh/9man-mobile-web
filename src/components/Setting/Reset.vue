@@ -1,6 +1,5 @@
 <template>
     <div class="reset-container">
-        <header></header>
         <div class="goBack">
             <span class="arrow-left" @click="$router.go(-1)"></span>
             <span class="title">修改密码</span>
@@ -42,10 +41,6 @@
         width: 100%;
         background-color: #F5F5F5;
         position: relative;
-        header {
-            height: 25rem/@baseFontSize;
-            background-color: #fff;
-        }
         .goBack {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;

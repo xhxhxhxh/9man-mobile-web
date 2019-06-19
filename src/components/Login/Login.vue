@@ -179,7 +179,8 @@
                         if (data.code == 200) {
                             Common.setLocalStorage('id', data.id);
                             Common.setLocalStorage('userInfo', data);
-                            this.$router.go(-1);
+                            this.$store.commit('setIdentity', data.identity);
+                            this.$router.push('/console/homepage');
                         } else {
                             Toast({
                                 message: data.msg,
@@ -235,7 +236,8 @@
                         if (data.code == 200) {
                             Common.setLocalStorage('id', data.id);
                             Common.setLocalStorage('userInfo', data);
-                            this.$router.go(-1);
+                            this.$store.commit('setIdentity', data.identity);
+                            this.$router.push('/console/homepage');
                         } else {
                             Toast({
                                 message: data.msg,

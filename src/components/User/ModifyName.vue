@@ -1,6 +1,5 @@
 <template>
     <div class="modifyName-container">
-        <header></header>
         <div class="goBack">
             <span @click="$router.go(-1)">取消</span>
             <span class="title">设置名字</span>
@@ -28,10 +27,6 @@
         height: 100%;
         width: 100%;
         background-color: #F5F5F5;
-        header {
-            height: 25rem/@baseFontSize;
-            background-color: #fff;
-        }
         .goBack {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;

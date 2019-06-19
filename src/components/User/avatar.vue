@@ -61,7 +61,6 @@
     .avatar-container {
         height: 100%;
         width: 100%;
-        padding: 25rem/@baseFontSize 0;
         .goBack {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;

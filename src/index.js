@@ -12,7 +12,7 @@ import { Button, Radio, Badge, Cell, Actionsheet } from 'mint-ui'
 
 Vue.config.productionTip = false;
 axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 Vue.prototype.$axios= axios;
 
 //全局组件

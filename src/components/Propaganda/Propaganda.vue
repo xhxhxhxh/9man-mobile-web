@@ -87,6 +87,7 @@
         height: 100%;
         width: 100%;
         position: relative;
+        background-color: #fff;
         .goBack {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;

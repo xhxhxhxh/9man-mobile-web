@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
-        rootUrl: 'https://edu.9man.com', //https://edu.9man.com
+        rootUrl: '', //https://edu.9man.com
         identity: ''
     },
     mutations: {

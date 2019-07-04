@@ -36,6 +36,8 @@
 <style lang="less" scoped>
     @import "../../less/var.less";
     .makeUpCourse-container {
+        height: 100%;
+        background-color: #fff;
         .goBack {
             height: 60rem/@baseFontSize;
             line-height: 60rem/@baseFontSize;

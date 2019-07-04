@@ -48,6 +48,7 @@
     .user-container {
         overflow: hidden;
         position: relative;
+        height: 100%;
         .setting {
             height: 20rem/@baseFontSize;
             position: absolute;

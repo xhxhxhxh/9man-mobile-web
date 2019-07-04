@@ -30,7 +30,7 @@ import page404 from './components/404/404.vue';
 // const ModifyGender = () => import( './components/User/ModifyGender.vue');
 
 const router = new VueRouter ({
-    mode: 'history',
+    // mode: 'history',
     routes: [
         { path: '/', redirect: '/console/homepage' },
         { path: '/login', component: Login, name: 'Login' },

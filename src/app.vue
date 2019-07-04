@@ -90,24 +90,23 @@
             transform: translateX(100%);
         }
         .slide-left-leave-to {
-            opacity: 0;
-            transform: translateX(-100%);
+            transform: translateX(-20%);
             position: absolute!important;
         }
         .slide-left-enter-active,.slide-left-leave-active {
-            transition: all .5s ease;
+            transition: transform .5s ease;
         }
         .slide-right-enter {
             opacity: 0;
-            transform: translateX(-100%);
+            transform: translateX(-20%);
         }
         .slide-right-leave-to {
-            opacity: 0;
+            z-index: 999;
             transform: translateX(100%);
             position: absolute!important;
         }
         .slide-right-enter-active,.slide-right-leave-active {
-            transition: all .5s ease;
+            transition: transform .5s ease;
         }
         .slide-up-enter {
             opacity: 0;

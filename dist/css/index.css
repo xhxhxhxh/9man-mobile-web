@@ -357,6 +357,7 @@
 .user-container {
   overflow: hidden;
   position: relative;
+  height: 100%;
 }
 .user-container .setting {
   height: 0.2rem;
@@ -588,6 +589,10 @@
   border: 0;
 }
 
+.makeUpCourse-container[data-v-65b41285] {
+  height: 100%;
+  background-color: #fff;
+}
 .makeUpCourse-container .goBack[data-v-65b41285] {
   height: 0.6rem;
   line-height: 0.6rem;
@@ -790,6 +795,8 @@
 .personalInfo-container {
   height: 100%;
   width: 100%;
+  background-color: #fff;
+  position: relative;
 }
 .personalInfo-container .goBack {
   height: 0.6rem;
@@ -843,6 +850,8 @@
 .avatar-container[data-v-c857e46c] {
   height: 100%;
   width: 100%;
+  background-color: #fff;
+  position: relative;
 }
 .avatar-container .goBack[data-v-c857e46c] {
   height: 0.6rem;
@@ -1004,6 +1013,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  background-color: #fff;
 }
 .propaganda-container .goBack[data-v-8bf1d888] {
   height: 0.6rem;
@@ -1143,26 +1153,25 @@ body {
   transform: translateX(100%);
 }
 .app-container .slide-left-leave-to {
-  opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-20%);
   position: absolute!important;
 }
 .app-container .slide-left-enter-active,
 .app-container .slide-left-leave-active {
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
 }
 .app-container .slide-right-enter {
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-20%);
 }
 .app-container .slide-right-leave-to {
-  opacity: 0;
+  z-index: 999;
   transform: translateX(100%);
   position: absolute!important;
 }
 .app-container .slide-right-enter-active,
 .app-container .slide-right-leave-active {
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease;
 }
 .app-container .slide-up-enter {
   opacity: 0;
